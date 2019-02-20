@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Footer, FooterTab, Button } from 'native-base';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
 
 class FooterTabIcon extends Component {
     render() {
         return (
-            <Container>
-                <Header />
-                <Content />
-                <Footer>
-                    <FooterTab>
-                        <Button vertical active>
-                            <Icon name="apps" />
-                            <Text>QR Code</Text>
-                        </Button>
-                        <Button vertical>
-                            <Icon name="camera" />
-                            <Text>Order</Text>
-                        </Button>
-                        <Button vertical>
-                            <Icon name="navigate" />
-                            <Text>Tech Support</Text>
-                        </Button>
-                    </FooterTab>
-                </Footer>
-            </Container>
+            <Footer>
+                <FooterTab>
+                    <Button vertical active>
+                        {/* <MaterialCommunityIcon name="qrcode-scan" size={20}/> */}
+                        <MaterialCommunityIcon name="facebook-box" size={20} color={'blue'}/>
+                        {/* <Text>QR Code</Text> */}
+                    </Button>
+                    <Button vertical>
+                        {/* <MaterialIcon name="shopping-cart" size={20}/> */}
+                        <MaterialCommunityIcon name="twitter" size={20} color={'blue'} />
+                        {/* <Text>Order</Text> */}
+                    </Button>
+                    <Button vertical>
+                        <MaterialCommunityIcon name="youtube" size={20} color={'red'}/>
+                        {/* <Text>Tech Support</Text> */}
+                    </Button>
+                </FooterTab>
+            </Footer>
         );
     }
 }

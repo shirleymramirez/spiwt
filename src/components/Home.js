@@ -1,33 +1,22 @@
 import React, { Component } from 'react';
 import { Container } from 'native-base';
-import { Navbar } from './Navbar';
+import { Header } from './Header';
+import { ToolBar } from './ToolBar';
+import { DrawerMenu } from './DrawerMenu';
+import { CardList } from './CardList';
 import { FooterTabIcon } from './FooterTabIcon';
 
 class Home extends Component {
   render() {
     return (
       <Container>
-        <Navbar />
-        <FooterTabIcon />
+        <Header />
+        <ToolBar />
+        <DrawerMenu />
+        <CardList />
       </Container>
     );
   }
 }
 
 export { Home };
-
-
-// const styles = {
-//   viewStyle: {
-//     backgroundColor: 'white',
-//     shadowColor: '#000',
-//     shadowOffset: { width: 0, height: 200 },
-//     shadowOpacity: 0.2
-//   },
-//   headerStyle: {
-//     backgroundColor: '#EFEFEF'
-//   },
-//   imageStyle: {
-//     flex: 1
-//   }
-// };
