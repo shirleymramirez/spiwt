@@ -20,19 +20,3 @@ class Header extends Component {
 }
 
 export { Header };
-
-
-// const styles = {
-//   viewStyle: {
-//     backgroundColor: 'white',
-//     shadowColor: '#000',
-//     shadowOffset: { width: 0, height: 200 },
-//     shadowOpacity: 0.2
-//   },
-//   headerStyle: {
-//     backgroundColor: '#EFEFEF'
-//   },
-//   imageStyle: {
-//     flex: 1
-//   }
-// };

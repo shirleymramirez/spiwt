@@ -7,7 +7,7 @@ class ToolBar extends Component {
     render() {
         return (
             <View style={{ height: 45, backgroundColor: '#2E73E4', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Button transparent >
+                <Button transparent onPress={() => this.props.openDrawer()}>
                     <Icon 
                         name="menu" style={{fontSize:20, color: 'white'}}
                     />
