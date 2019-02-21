@@ -15,7 +15,9 @@ class ToolBar extends Component {
                 <Button transparent>
                     <Text style={{ color: 'white', fontSize: 22 }}>Product List</Text>
                 </Button>
-                <Button transparent iconLeft >
+                <Button transparent iconLeft
+                  onPress={() => this.props.navigation.navigate('QRCode')}
+                >
                     <MaterialCommunityIcon
                         name="qrcode-scan" size={20} color={'white'}
                     />
