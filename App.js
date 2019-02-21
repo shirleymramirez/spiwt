@@ -6,15 +6,26 @@
  * @flow
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
+import React from 'react';
 
-import React, { Component } from 'react';
-import { Home } from './src/components/Home';
+import { ProductScreen } from './src/components/ProductScreen';
+import { QRCodeScannerScreen } from './src/components/QRCodeScannerScreen';
+import { Image } from 'react-native';
+import logo from './src/images/Spectrapure.png';
 
-// type Props = {};
-export default class App extends Component {
-  render() {
-    return (
-        <Home />
-    );
-  }
-}
+import {createStackNavigator, createAppContainer} from 'react-navigation';
+
+const MainNavigator = createStackNavigator({
+    Product: {screen: ProductScreen},
+    QRCode: {screen: QRCodeScannerScreen},
+  },
+  {
+    initialRouteName: "Product",
+    defaultNavigationOptions: {
+      headerTitle: <Image source={logo} style={{ flex: 1 }} resizeMode='contain' />
+    }
+});
+
+const App = createAppContainer(MainNavigator);
+
+export default App;
