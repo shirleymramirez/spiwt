@@ -3,11 +3,15 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  TouchableOpacity,
   Linking,
+  Dimensions,
+  View,
 } from 'react-native';
 import { Container } from 'native-base';
 import QRCodeScanner from 'react-native-qrcode-scanner';
+import Icon from "react-native-vector-icons/Ionicons";
+
+const SCREEN_WIDTH = Dimensions.get("window").width;
 
 class QRCodeScannerScreen extends Component {
   onSuccess(e) {
@@ -20,16 +24,22 @@ class QRCodeScannerScreen extends Component {
     return (
       <Container>
         <QRCodeScanner
+          showMarker
           onRead={this.onSuccess.bind(this)}
           topContent={
             <Text style={styles.centerText}>
-              On your water system scan the QR code.
+              Locate the QR code on your water system.
             </Text>
           }
-          bottomContent={
-            <TouchableOpacity style={styles.buttonTouchable}>
-              <Text style={styles.buttonText}>OK. Got it!</Text>
-            </TouchableOpacity>
+          cameraStyle={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+          customMarker={
+            <View >
+                <Icon
+                  name="ios-qr-scanner"
+                  size={SCREEN_WIDTH * 0.60}
+                  color={'#fff'}
+                />
+            </View>
           }
         />
       </Container>
@@ -51,6 +61,9 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 21,
     color: 'rgb(0,122,255)',
+  },
+  cameraStyle: {
+    padding: 20,
   },
   buttonTouchable: {
     padding: 16,

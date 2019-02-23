@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container } from 'native-base';
 import { ToolBar } from './ToolBar';
-import { DrawerMenu } from './DrawerMenu';
 import { CardList } from './CardList';
 
 class ProductScreen extends Component {
@@ -9,8 +8,6 @@ class ProductScreen extends Component {
     return (
       <Container>
         <ToolBar navigation={this.props.navigation}/>
-        <ControlPanel />
-        <DrawerMenu />
         <CardList />
       </Container>
     );
