@@ -8,10 +8,10 @@
  */
 import React from 'react';
 
-import { ProductScreen } from './src/components/ProductScreen';
-import { QRCodeScannerScreen } from './src/components/QRCodeScannerScreen';
+import { ProductScreen } from './src/components/Products/ProductScreen';
+import { QRCodeScannerScreen } from './src/components/QRCodeScanner/QRCodeScannerScreen';
 import { Image } from 'react-native';
-import logo from './src/images/Spectrapure.png';
+import logo from './src/images/Spectrapure-small.png';
 
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
@@ -22,7 +22,7 @@ const MainNavigator = createStackNavigator({
   {
     initialRouteName: "Product",
     defaultNavigationOptions: {
-      headerTitle: <Image source={logo} style={{ flex: 1 }} resizeMode='contain' />
+      headerTitle: <Image source={logo} style={{ flex: 0.6 }} resizeMode='contain'/>
     }
 });
 

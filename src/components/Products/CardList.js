@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Body, Text } from 'native-base';
-// import { View } from 'react-native';
 
 class CardList extends Component {
     render() {
