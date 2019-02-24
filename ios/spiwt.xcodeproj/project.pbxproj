@@ -1406,6 +1406,7 @@
 			name = LaunchScreen.xib;
 			path = spiwt;
 			sourceTree = "<group>";
+			wrapsLines = 1;
 		};
 /* End PBXVariantGroup section */
 
