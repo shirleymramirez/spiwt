@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  Linking,
+  AsyncStorage,
   Dimensions,
   View,
 } from 'react-native';
@@ -14,10 +14,14 @@ import Icon from "react-native-vector-icons/Ionicons";
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
 class QRCodeScannerScreen extends Component {
-  onSuccess(e) {
-    Linking
-      .openURL(e.data)
-      .catch(err => console.error('An error occured', err));
+  constructor(props) {
+    super(props);
+  };
+
+  async onSuccess(e){
+    console.log(e.data);
+    await AsyncStorage.setItem('productIds', JSON.stringify([e.data]));
+    this.props.navigation.goBack();
   }
 
   render() {

@@ -17,7 +17,6 @@ class ToolBar extends Component {
                 </Button>
                 <Button transparent iconLeft
                   onPress={() => {
-                      console.log('onPress called');
                       this.props.navigation.navigate('QRCode');
                   }}
                 >
