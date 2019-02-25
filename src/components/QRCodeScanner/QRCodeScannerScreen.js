@@ -19,9 +19,11 @@ class QRCodeScannerScreen extends Component {
   };
 
   async onSuccess(e){
-    console.log(e.data);
     await AsyncStorage.setItem('productIds', JSON.stringify([e.data]));
-    this.props.navigation.goBack();
+    setTimeout(() => {
+      console.log('setTimeout called to call goBack()');
+      this.props.navigation.goBack();
+    }, 1000);
   }
 
   render() {
@@ -29,7 +31,7 @@ class QRCodeScannerScreen extends Component {
       <Container>
         <QRCodeScanner
           showMarker
-          onRead={this.onSuccess.bind(this)}
+          onRead={(e) => this.onSuccess(e)}
           topContent={
             <Text style={styles.centerText}>
               Locate the QR code on your water system.
