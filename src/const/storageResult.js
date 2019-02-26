@@ -1,0 +1,5 @@
+const EXISTS = 'EXISTS';
+const UNKNOWN = 'UNKNOWN';
+const SUCCESS = 'SUCCESS';
+
+export { EXISTS, UNKNOWN, SUCCESS }

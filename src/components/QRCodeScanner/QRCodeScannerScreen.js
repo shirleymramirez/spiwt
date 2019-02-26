@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  AsyncStorage,
   Dimensions,
   View,
+  Alert,
 } from 'react-native';
 import { Container } from 'native-base';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Icon from "react-native-vector-icons/Ionicons";
+
+import { SyncStorage } from '../../utils/SyncStorage';
+import { UNKNOWN, EXISTS } from '../../const/storageResult';
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -19,11 +22,28 @@ class QRCodeScannerScreen extends Component {
   };
 
   async onSuccess(e){
-    await AsyncStorage.setItem('productIds', JSON.stringify([e.data]));
-    setTimeout(() => {
-      console.log('setTimeout called to call goBack()');
+    console.log(e.data);
+    const result = await SyncStorage.setProduct(e.data);
+    if (result === UNKNOWN) {
+      Alert.alert(
+        'Error',
+        'Water System is not recognized',
+        [
+          { text: 'OK' },
+        ]
+      );
+    }
+    else if (result === EXISTS) {
+      Alert.alert(
+        'Error',
+        'Water System is already in the list',
+        [
+          { text: 'OK' },
+        ]
+      );
+    } else {
       this.props.navigation.goBack();
-    }, 1000);
+    }
   }
 
   render() {
@@ -31,6 +51,8 @@ class QRCodeScannerScreen extends Component {
       <Container>
         <QRCodeScanner
           showMarker
+          reactivate
+          reactivateTimeout={4000}
           onRead={(e) => this.onSuccess(e)}
           topContent={
             <Text style={styles.centerText}>

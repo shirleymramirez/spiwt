@@ -8,7 +8,7 @@ class ProductScreen extends Component {
     return (
       <Container>
         <ToolBar navigation={this.props.navigation}/>
-        <Products />
+        <Products navigation={this.props.navigation}/>
       </Container>
     );
   }
