@@ -1,20 +1,34 @@
 import React, { Component } from 'react';
 import { CardItem, Left, Body, Right } from 'native-base';
 
-import { Action } from '../Action';
+import { VerticalAction } from '../VerticalAction';
 
 class ProductActions extends Component {
     render() {
         return (
             <CardItem>
                 <Left>
-                    <Action iconName="file-document-box" actionText="Manual" style={{ fontSize: 20 }}/>
+                    <VerticalAction
+                      iconName="file-document-box"
+                      actionText="Manual"
+                      style={{ fontSize: 24, color: '#2E73E4' }}
+                      onPress={() => this.props.onViewPdf()}
+                    />
                 </Left>
                 <Body>
-                    <Action iconName="water-percent" actionText="Reading" style={{ fontSize: 20 }}/>
+                    <VerticalAction
+                      iconName="water-percent"
+                      actionText="Reading"
+                      style={{ fontSize: 24, color: '#2E73E4' }}
+                    />
                 </Body>
                 <Right>
-                    <Action iconName="delete" actionText="Delete" style={{ color: 'red', fontSize: 20 }} onPress={() => this.props.onDelete()}/>
+                    <VerticalAction
+                      iconName="delete"
+                      actionText="Delete"
+                      style={{ color: '#DA3731', fontSize: 24 }}
+                      onPress={() => this.props.onDelete()}
+                    />
                 </Right>
             </CardItem>
         );
