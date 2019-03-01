@@ -1577,11 +1577,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = org.spectrapure.spiwt;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = org.spectrapure.app;
->>>>>>> e45e4f61678c5f23af81427d730b712a8bc4fc80
 				PRODUCT_NAME = spiwt;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1609,11 +1605,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = org.spectrapure.spiwt;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = org.spectrapure.app;
->>>>>>> e45e4f61678c5f23af81427d730b712a8bc4fc80
 				PRODUCT_NAME = spiwt;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
