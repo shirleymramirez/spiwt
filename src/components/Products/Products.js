@@ -22,22 +22,31 @@ class Products extends Component {
 
     async _loadProducts() {
         const productIds = await SyncStorage.getProducts();
-        console.log(`_loadProducts: ${productIds}`);
         this.setState({ productIds: productIds })
     }
 
     async _deleteHandler(idToBeRemoved) {
         const idsAfterDelete = await SyncStorage.deleteProduct(idToBeRemoved);
-        console.log(idsAfterDelete);
         this.setState({ productIds: idsAfterDelete })
+    }
+
+    _viewPdfHandler(userManualURL) {
+        this.props.navigation.navigate('ViewPdf', { userManualURL });
     }
 
     render() {
         return (
-            <Container>
+            <Container style={{ backgroundColor: '#efefef', padding: 5 }}>
                {this.state.productIds.length === 0 ?
-                    <Text style={{ fontSize: 20, padding: 20 }}>Your list is empty. Click scan to retrieve product information</Text> :
-                    this.state.productIds.map(productId => <Product key={productId} id={productId} onDelete={(idToBeRemoved) => this._deleteHandler(idToBeRemoved)} />)
+                    <Text style={{ fontSize: 20, padding: 20, textAlign: 'center' }}>List is empty. Click scan to retrieve product information</Text> :
+                    this.state.productIds.map(productId =>
+                      <Product 
+                        key={productId}
+                        id={productId}
+                        onDelete={(idToBeRemoved) => this._deleteHandler(idToBeRemoved)} 
+                        onViewPdf={(userManualURL) => this._viewPdfHandler(userManualURL)} 
+                      />
+                    )
                 }
             </Container>
         );

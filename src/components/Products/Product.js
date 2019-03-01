@@ -10,20 +10,28 @@ class Product extends Component {
         this.props.onDelete(this.props.id);
     }
 
+    _viewPdfHandler() {
+        const product = PRODUCTS[this.props.id];
+        this.props.onViewPdf(product.userManualURL);
+    }
+
     render() {
         const product = PRODUCTS[this.props.id];
         return(
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={{ uri: product.imageURL }} style={{ height:100, width:100 }}/>
-                        <Body>
+                        <Thumbnail source={{ uri: product.imageURL }} style={{ height:120, width:120 }}/>
+                        <Body style={{ paddingLeft: 10, paddingRight: 10 }}>
                             <Text>{product.description}</Text>
                             <Text note>{this.props.id}</Text>
                         </Body>
                     </Left>
                 </CardItem>
-                <ProductActions onDelete={() => this._deleteHandler()} />
+                <ProductActions
+                  onDelete={() => this._deleteHandler()}
+                  onViewPdf={() => this._viewPdfHandler()}
+                />
             </Card>
         );
     }

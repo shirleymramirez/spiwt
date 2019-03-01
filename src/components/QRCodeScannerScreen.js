@@ -11,8 +11,8 @@ import { Container } from 'native-base';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Icon from "react-native-vector-icons/Ionicons";
 
-import { SyncStorage } from '../../utils/SyncStorage';
-import { UNKNOWN, EXISTS } from '../../const/storageResult';
+import { SyncStorage } from '../utils/SyncStorage';
+import { UNKNOWN, EXISTS } from '../const/storageResult';
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -56,7 +56,7 @@ class QRCodeScannerScreen extends Component {
           onRead={(e) => this.onSuccess(e)}
           topContent={
             <Text style={styles.centerText}>
-              Locate the QR code on your water system.
+              Scan QR code
             </Text>
           }
           cameraStyle={{ backgroundColor: "rgba(0,0,0,0.5)" }}
