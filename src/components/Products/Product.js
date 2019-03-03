@@ -4,6 +4,7 @@ import { Text, Card, CardItem, Left, Body, Thumbnail } from 'native-base';
 
 import { PRODUCTS } from '../../const/products';
 import { ProductActions } from './ProductActions';
+import { HistoryScreen } from '../Reading/HistoryScreen';
 
 class Product extends Component {
     _deleteHandler() {
@@ -13,6 +14,10 @@ class Product extends Component {
     _viewPdfHandler() {
         const product = PRODUCTS[this.props.id];
         this.props.onViewPdf(product.userManualURL);
+    }
+
+    _viewHistoryScreen() {
+        this.props.onViewHistoryScreen();
     }
 
     render() {
@@ -31,6 +36,7 @@ class Product extends Component {
                 <ProductActions
                   onDelete={() => this._deleteHandler()}
                   onViewPdf={() => this._viewPdfHandler()}
+                  onViewHistoryScreen={() => this._viewHistoryScreen()}
                 />
             </Card>
         );

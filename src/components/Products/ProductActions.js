@@ -20,6 +20,7 @@ class ProductActions extends Component {
                       iconName="water-percent"
                       actionText="Reading"
                       style={{ fontSize: 24, color: '#2E73E4' }}
+                      onPress={() => this.props.onViewHistoryScreen()}
                     />
                 </Body>
                 <Right>

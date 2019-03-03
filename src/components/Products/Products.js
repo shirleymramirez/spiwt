@@ -34,6 +34,10 @@ class Products extends Component {
         this.props.navigation.navigate('ViewPdf', { userManualURL });
     }
 
+    _viewHistoryScreen() {
+        this.props.navigation.navigate('ViewHistory');
+    }
+
     render() {
         return (
             <Container style={{ backgroundColor: '#efefef', padding: 5 }}>
@@ -43,8 +47,9 @@ class Products extends Component {
                       <Product 
                         key={productId}
                         id={productId}
-                        onDelete={(idToBeRemoved) => this._deleteHandler(idToBeRemoved)} 
                         onViewPdf={(userManualURL) => this._viewPdfHandler(userManualURL)} 
+                        onViewHistoryScreen={() => this._viewHistoryScreen()}
+                        onDelete={(idToBeRemoved) => this._deleteHandler(idToBeRemoved)} 
                       />
                     )
                 }
