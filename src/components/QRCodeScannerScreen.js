@@ -11,8 +11,8 @@ import { Container } from 'native-base';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import Icon from "react-native-vector-icons/Ionicons";
 
-import { SyncStorage } from '../utils/SyncStorage';
-import { UNKNOWN, EXISTS } from '../const/storageResult';
+import { ProductStorage } from '../utils/ProductStorage';
+import { UNKNOWN, EXISTS } from '../const/productStorageResult';
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
@@ -22,8 +22,7 @@ class QRCodeScannerScreen extends Component {
   };
 
   async onSuccess(e){
-    console.log(e.data);
-    const result = await SyncStorage.setProduct(e.data);
+    const result = await ProductStorage.setProduct(e.data);
     if (result === UNKNOWN) {
       Alert.alert(
         'Error',

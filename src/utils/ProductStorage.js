@@ -1,13 +1,13 @@
 import { AsyncStorage } from 'react-native';
 
-import { UNKNOWN, EXISTS, SUCCESS } from '../const/storageResult';
+import { UNKNOWN, EXISTS, SUCCESS } from '../const/productStorageResult';
 import { PRODUCTS } from '../const/products';
 
-const BASE_STORAGE_PATH = '@SpectraPure';
+import { BASE_STORAGE_PATH } from '../const/path';
 
-class SyncStorage {
+class ProductStorage {
   static async setProduct(productId) {
-    const productIds = await SyncStorage.getProducts();
+    const productIds = await ProductStorage.getProducts();
     if (productIds.includes(productId)) {
       return EXISTS;
     }
@@ -30,7 +30,7 @@ class SyncStorage {
 
   static async deleteProduct(idToBeRemoved) {
     let idsAfterFilter = [];
-    const productIds = await SyncStorage.getProducts();
+    const productIds = await ProductStorage.getProducts();
 
     idsAfterFilter = productIds.filter(id => id !== idToBeRemoved);
     await AsyncStorage.setItem(`${BASE_STORAGE_PATH}:productIds`, JSON.stringify(idsAfterFilter));
@@ -39,4 +39,4 @@ class SyncStorage {
   }
 }
 
-export { SyncStorage }
+export { ProductStorage }

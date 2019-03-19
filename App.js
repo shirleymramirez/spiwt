@@ -11,7 +11,8 @@ import React from 'react';
 import { ProductScreen } from './src/components/Products/ProductScreen';
 import { QRCodeScannerScreen } from './src/components/QRCodeScannerScreen';
 import { ViewPdfScreen } from './src/components/ViewPdfScreen';
-import { HistoryScreen } from './src/components/Reading/HistoryScreen';
+import { ReadingScreen } from './src/components/Reading/ReadingScreen';
+// import { InputScreen } from './src/components/Reading/InputScreen';
 import { Image } from 'react-native';
 import logo from './src/images/Spectrapure-small.png';
 
@@ -22,7 +23,8 @@ const MainNavigator = createStackNavigator({
     Product: {screen: ProductScreen},
     QRCode: {screen: QRCodeScannerScreen},
     ViewPdf: {screen: ViewPdfScreen},
-    ViewHistory: {screen: HistoryScreen }
+    ViewHistory: {screen: ReadingScreen },
+    // InputData: { screen: InputScreen },
   },
   {
     initialRouteName: "Product",

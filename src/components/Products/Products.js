@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Text } from 'native-base';
 
 import { Product } from './Product';
-import { SyncStorage } from '../../utils/SyncStorage';
+import { ProductStorage } from '../../utils/ProductStorage';
 
 class Products extends Component {
     constructor(props) {
@@ -21,12 +21,12 @@ class Products extends Component {
     }
 
     async _loadProducts() {
-        const productIds = await SyncStorage.getProducts();
+        const productIds = await ProductStorage.getProducts();
         this.setState({ productIds: productIds })
     }
 
     async _deleteHandler(idToBeRemoved) {
-        const idsAfterDelete = await SyncStorage.deleteProduct(idToBeRemoved);
+        const idsAfterDelete = await ProductStorage.deleteProduct(idToBeRemoved);
         this.setState({ productIds: idsAfterDelete })
     }
 

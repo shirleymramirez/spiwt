@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import { Container, Text, H1 } from 'native-base';
-import { ToolBar } from '../ToolBar';
+import { Container } from 'native-base';
+import { ToolBar } from '../ToolBar';   
+import { Reading } from './Reading';
 
-class HistoryScreen extends Component {
+
+class ReadingScreen extends Component {
     render() {
         return (
             <Container>
                 <ToolBar
                     title="Reading History"
+                    onActionClick={() => this.props.navigation.navigate('InputData')} 
                     iconName="plus-circle-outline"
                     actionText="Add"
                 />
-                <Text><H1>This is History Screen</H1></Text>
+                <Reading />
             </Container>
         )
     }
 }
 
-export { HistoryScreen };
+export { ReadingScreen };

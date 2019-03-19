@@ -4,7 +4,6 @@ import { Text, Card, CardItem, Left, Body, Thumbnail } from 'native-base';
 
 import { PRODUCTS } from '../../const/products';
 import { ProductActions } from './ProductActions';
-import { HistoryScreen } from '../Reading/HistoryScreen';
 
 class Product extends Component {
     _deleteHandler() {
