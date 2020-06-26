@@ -11,3 +11,6 @@ An app that allows a user to scan a QR code to identify the kind of water filtra
 
 
 <img src="https://user-images.githubusercontent.com/1609161/85900294-700b3380-b7b4-11ea-9335-57e306ed5025.jpg" alt="Product List" width="400"/>
+
+
+<img src="https://user-images.githubusercontent.com/1609161/85903475-430e4f00-b7bb-11ea-8e02-fb0986c88876.jpg" alt="PDF View" width="400"/>
